@@ -26,8 +26,6 @@ const Reviews = ({ id, prevRating, userRated }) => {
 
             if (useAppstate.login) {
 
-
-
                 await addDoc(reviewsRef, {
                     movieid: id,
                     name: useAppstate.userName,

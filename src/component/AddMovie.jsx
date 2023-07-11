@@ -9,8 +9,8 @@ import { useNavigate } from 'react-router-dom'
 
 const AddMovie = () => {
 
-    const useAppstate = useContext(Appstate)
-    const navigate = useNavigate()
+    const useAppstate = useContext(Appstate);
+    const navigate = useNavigate();
 
     const [form, setForm] = useState([
         {
@@ -26,23 +26,21 @@ const AddMovie = () => {
     const [loading, setLoading] = useState(false)
 
     const addMovie = async () => {
-        setLoading(true)
+        setLoading(true);
         try {
-            if (useAppstate.login) {
-
-
+            if(useAppstate.login) {
                 await addDoc(moviesRef, form)
-                swal({
-                    title: "Successfully Added ",
-                    icon: "success",
-                    buttons: false,
-                    timer: 3000
-                })
                 setForm({
                     title: "",
                     year: "",
                     description: "",
                     image: ""
+                })
+                swal({
+                    title: "Successfully Added",
+                    icon: "success",
+                    buttons: false,
+                    timer: 3000
                 })
             } else {
                 navigate('/login')
@@ -50,7 +48,7 @@ const AddMovie = () => {
 
         } catch (error) {
             swal({
-                title: error,
+                title: error.message,
                 icon: error,
                 buttons: false,
                 timer: 3000

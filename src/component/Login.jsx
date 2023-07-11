@@ -95,7 +95,7 @@ const Login = () => {
                 <button onClick={login} class="flex mx-auto text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-700 rounded text-lg">{loading ? <TailSpin height={25} color='white' /> : "Login"}</button>
             </div>
             <div>
-                <p>If don't have an Account ?  <Link to={'/signup'}><span className='text-blue-500'> Sing Up</span></Link> </p>
+                <p>If don't have an Account ?  <Link to={'/signup'}><span className='text-blue-500'> Sign Up</span></Link> </p>
             </div>
 
         </div>
